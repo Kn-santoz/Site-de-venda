@@ -331,3 +331,71 @@ footer {
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
 }
+/* ========== REDES SOCIAIS ========== */
+.social-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 50%;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--text-dark);
+    color: white;
+    border-color: var(--text-dark);
+    transform: translateY(-3px);
+}
+
+/* Rodapé social */
+.footer-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: 50%;
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    transition: all 0.2s ease;
+}
+
+.footer-social-icon:hover {
+    background-color: var(--text-dark);
+    color: white;
+    border-color: var(--text-dark);
+    transform: translateY(-3px);
+}
+
+/* Ajuste no footer para acomodar os ícones */
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}

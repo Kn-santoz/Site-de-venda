@@ -90,6 +90,50 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // ========== NOVO: PREPARAR ÍCONES SOCIAIS ==========
+    function prepararLinksSociais() {
+        const socialIcons = document.querySelectorAll('.social-icon, .footer-social-icon');
+        
+        socialIcons.forEach(icon => {
+            // Adiciona um atributo data-original-href para referência
+            const social = icon.getAttribute('data-social');
+            
+            // Adiciona um placeholder visual para saber qual rede é
+            icon.setAttribute('title', `Adicionar link do ${social}`);
+            
+            // Log no console para facilitar a localização
+            console.log(`Ícone do ${social} pronto para link:`, icon);
+        });
+        
+        console.log('✅ Ícones sociais preparados! Basta adicionar os links nos href="#".');
+    }
+
+    // ========== NOVO: SIMULAÇÃO DE CLIQUE EM ÍCONES SOCIAIS ==========
+    function configurarCliqueSocial() {
+        const socialIcons = document.querySelectorAll('.social-icon, .footer-social-icon');
+        
+        socialIcons.forEach(icon => {
+            icon.addEventListener('click', function(e) {
+                // Se o href ainda for "#", impede o navegador de ir para o topo
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    
+                    const social = this.getAttribute('data-social') || 'rede social';
+                    
+                    // Cria um alerta amigável (pode ser removido depois)
+                    alert(`🔗 Link do ${social} ainda não configurado!\n\nPara adicionar: edite o href deste ícone no HTML.`);
+                    
+                    // Destaca o ícone no console para fácil localização
+                    console.log(`👉 Ícone do ${social} aguardando link:`, this);
+                }
+            });
+        });
+    }
+
+    // ========== EXECUTAR NOVAS FUNÇÕES ==========
+    prepararLinksSociais();
+    configurarCliqueSocial();
     
     console.log('✅ JavaScript carregado! Modelo pronto para personalização.');
 });
